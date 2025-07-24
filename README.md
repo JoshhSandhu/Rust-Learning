@@ -53,7 +53,7 @@ rust-learning/
 
 **Josh Sandhu**  
 Web3 & Game Developer | Blockchain Enthusiast  
-[GitHub](https://github.com/JoshhSandhu) | [Twitter](https://twitter.com/yourhandle)
+[GitHub](https://github.com/JoshhSandhu) | [Twitter](https://x.com/0xJ05H)
 
 ---
 
