@@ -13,33 +13,6 @@ I’ll be uploading code alongside each module to solidify concepts through real
 
 ---
 
-## 📁 Project Structure
-
-Each folder corresponds to a major topic or project covered in the course.
-
-```
-rust-learning/
-│
-├── 01_variables_and_types/
-├── 02_ownership_and_borrowing/
-├── 03_structs_and_enums/
-├── 04_traits_and_generics/
-├── 05_collections/
-├── 06_error_handling/
-├── 07_cli_projects/
-├── 08_multithreading/
-├── 09_web_server_project/
-└── README.md
-```
-
-> ✅ Each folder includes:
-> - Code examples
-> - Exercises (where applicable)
-> - Comments to explain the logic
-> - Learnings or notes
-
----
-
 ## 🛠️ Tech Stack
 
 - **Language:** Rust 🦀
