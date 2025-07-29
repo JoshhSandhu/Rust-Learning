@@ -1,3 +1,4 @@
+use rand::{thread_rng, seq::SliceRandom};
 #[derive(Debug)]
 struct Deck {
     cards: Vec<String>,
@@ -23,16 +24,19 @@ impl Deck {
             }
         }
 
-        let deck: Deck = Deck { cards };
-        //when we have 2 bindings of the same name like Deck = Deck { cards : cards }; we can rewrite it as Deck { cards };
+        return Deck { cards }
+    }
 
-        return deck;
+    fn shuffle(&mut self){
+        //we use the mut here cause the rng is calling the thread_rng fn that will change the data in some way
+         let mut rng = thread_rng();
+         self.cards.shuffle(&mut rng);
     }
 }
 
 fn main() {
-    let deck = Deck::new();
-
+    let mut deck = Deck::new();
+    deck.shuffle();
     println!("this is your deck of cards: {:#?}", deck);
     // we use this {:#?} to display the output in a more ledgible manner.
 }
