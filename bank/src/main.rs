@@ -3,7 +3,7 @@
 struct Bank{
     accounts: Vec<Account>,
 }
-
+   
 impl Bank{
     fn new() -> Self {
         Bank { accounts: vec![]}
