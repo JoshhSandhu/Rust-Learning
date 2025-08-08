@@ -22,7 +22,7 @@ impl Account {
     }
 }
 
-fn print_account(account: Account) {
+fn print_account(account: &Account) {
     println!("{:#?}", account);
 }
 
@@ -32,5 +32,6 @@ fn main() {
     let account = Account::new(1, String::from("josh"));
 
     println!("{:#?}", bank);
-    print_account(account);
+    print_account(&account);
+    print_account(&account);
 }
