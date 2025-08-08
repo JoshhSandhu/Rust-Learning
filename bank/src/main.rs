@@ -32,6 +32,8 @@ fn change_bank(account: &mut Account){
 
 fn main() {
     let bank = Bank::new();
+    let num = 5;
+    let other_num = num;
     let mut account = Account::new(1, String::from("josh"));
 
     println!("{:#?}", bank);
@@ -41,6 +43,8 @@ fn main() {
 
     change_bank(&mut account);
     println!("{:#?}", account);
+
+    println!("{} {}", num, other_num);
     // print_account(account_ref1);
     // print_account(account_ref2);
 }
