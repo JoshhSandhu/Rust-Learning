@@ -32,6 +32,10 @@ fn main() {
     let account = Account::new(1, String::from("josh"));
 
     println!("{:#?}", bank);
-    print_account(&account);
-    print_account(&account);
+
+    let account_ref1 = &account;
+    let account_ref2 = &account;
+
+    print_account(account_ref1);
+    print_account(account_ref2);
 }
