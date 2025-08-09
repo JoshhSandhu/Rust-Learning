@@ -30,6 +30,14 @@ fn change_bank(account: &mut Account){
     account.balance = 10;
 }
 
+fn make_and_print_account() -> &Account{
+    let account = Account::new(1, String::from("hello"));
+
+    println!("{:#?}", account);
+
+    &account
+}
+
 fn main() {
     let bank = Bank::new();
     let num = 5;
@@ -43,8 +51,11 @@ fn main() {
 
     change_bank(&mut account);
     println!("{:#?}", account);
-
     println!("{} {}", num, other_num);
     // print_account(account_ref1);
     // print_account(account_ref2);
+    
+    //Lifetimes
+    let account_reference = make_and_print_account();
+    println!("{:#?}",account_reference.balance);
 }
