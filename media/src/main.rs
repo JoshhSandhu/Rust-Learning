@@ -12,6 +12,8 @@ enum media{
 
 impl media {
     fn description(&self) -> String {
+
+        //pattern matching
         //we dont know if self is an audiobook, movie or an book
         // if let media::book{ title, author} = self {
         //     format!("Book:{} {}", title, author)
@@ -59,6 +61,21 @@ impl Calalog {
     fn add(&mut self, media:media){
         self.item.push(media);
     }
+
+    fn get_by_index(&self, index: usize) -> mighHaveaValue{
+        if self.item.len() > index{
+            mighHaveaValue::thereIsAvalue((&self.item[index]))
+        }
+        else{
+            mighHaveaValue::novalueAvalaible
+        }
+        
+    }
+}
+
+enum  mighHaveaValue<'a > {
+    thereIsAvalue(&'a media),
+    novalueAvalaible
 }
 
 fn print_media(media:media){
@@ -94,14 +111,26 @@ fn main() {
     calalog.add(podcats);
     calalog.add(Placeholder);
 
-    match calalog.item.get(100){
-        Some(value) => {
-            println!("Item: {:#?}", value);
+    match calalog.get_by_index(100){
+        mighHaveaValue::thereIsAvalue(value) => {
+            println!("item : {:#?}", value)
         }
-        None =>{
-            println!("nothing at this value");
+        mighHaveaValue::novalueAvalaible =>{
+            println!("no value here")
         }
     }
+
+    //let item = calalog.get_by_index(40);
+    // println!("{:#?}", item );
+
+    // match calalog.item.get(100){
+    //     Some(value) => {
+    //         println!("Item: {:#?}", value);
+    //     }
+    //     None =>{
+    //         println!("nothing at this value");
+    //     }
+    // }
 
     //println!("{:#?}", calalog.item.get(0));
 
