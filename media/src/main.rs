@@ -92,7 +92,7 @@ fn main() {
     calalog.add(podcats);
     calalog.add(Placeholder);
 
-    println!("{:#?}", calalog);
+    println!("{:#?}", calalog.item.get(0));
 
     // println!("{}",audiobook.description());
     // println!("{}",goodmovie.description());
