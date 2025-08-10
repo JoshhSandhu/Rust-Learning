@@ -113,8 +113,9 @@ fn main() {
     calalog.add(Placeholder);
     
     let item = calalog.get_by_index(40);
+    let holder = media::placeholder;
     
-    println!("{:#?}", item.expect("expected there to be a value here"));
+    println!("{:#?}", item.unwrap_or(&holder));
 
     //-------------------<>--------------------------------------
     // match calalog.get_by_index(100){
