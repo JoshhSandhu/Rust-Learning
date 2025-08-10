@@ -112,9 +112,9 @@ fn main() {
     calalog.add(podcats);
     calalog.add(Placeholder);
     
-    let item = calalog.get_by_index(0);
+    let item = calalog.get_by_index(40);
     
-    println!("{:#?}", item.unwrap());
+    println!("{:#?}", item.expect("expected there to be a value here"));
 
     //-------------------<>--------------------------------------
     // match calalog.get_by_index(100){
