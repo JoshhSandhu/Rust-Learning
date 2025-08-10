@@ -53,6 +53,11 @@ struct Calalog{
     item: Vec<media>
 }
 
+#[derive(Debug)]
+struct Account {
+    balance: i32
+}
+
 impl Calalog {
     fn new() -> Self{
         Calalog{ item: vec![]}
