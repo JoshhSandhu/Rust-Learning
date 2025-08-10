@@ -1,3 +1,5 @@
+use std::{collections::hash_map::Values, num::FpCategory};
+
 #[derive(Debug)]
 enum media{
     book{title: String, author: String},
@@ -92,7 +94,16 @@ fn main() {
     calalog.add(podcats);
     calalog.add(Placeholder);
 
-    println!("{:#?}", calalog.item.get(0));
+    match calalog.item.get(100){
+        Some(value) => {
+            println!("Item: {:#?}", value);
+        }
+        None =>{
+            println!("nothing at this value");
+        }
+    }
+
+    //println!("{:#?}", calalog.item.get(0));
 
     // println!("{}",audiobook.description());
     // println!("{}",goodmovie.description());
