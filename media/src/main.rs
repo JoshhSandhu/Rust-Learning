@@ -62,21 +62,22 @@ impl Calalog {
         self.item.push(media);
     }
 
-    fn get_by_index(&self, index: usize) -> mighHaveaValue{
+    fn get_by_index(&self, index: usize) -> Option<&media>{
         if self.item.len() > index{
-            mighHaveaValue::thereIsAvalue((&self.item[index]))
+            Some((&self.item[index]))
         }
         else{
-            mighHaveaValue::novalueAvalaible
+            None
         }
         
     }
 }
 
-enum  mighHaveaValue<'a > {
-    thereIsAvalue(&'a media),
-    novalueAvalaible
-}
+//this enum that we made is use to show the working of the default option enum
+// enum  mighHaveaValue<'a > {
+//     thereIsAvalue(&'a media),
+//     novalueAvalaible
+// }
 
 fn print_media(media:media){
     println!("{:#?}", media)
@@ -112,13 +113,20 @@ fn main() {
     calalog.add(Placeholder);
 
     match calalog.get_by_index(100){
-        mighHaveaValue::thereIsAvalue(value) => {
+        Some(value) => {
             println!("item : {:#?}", value)
         }
-        mighHaveaValue::novalueAvalaible =>{
+        None =>{
             println!("no value here")
         }
     }
+
+    //we can also use pattern matching for this case
+    // if let mighHaveaValue::thereIsAvalue(value) = calalog.get_by_index(0){
+    //     println!("item in patten match: {:#?}", value)
+    // } else {
+    //     println!("there is no value of such!!!!!")
+    // }
 
     //let item = calalog.get_by_index(40);
     // println!("{:#?}", item );
