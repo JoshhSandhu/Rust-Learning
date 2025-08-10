@@ -111,15 +111,20 @@ fn main() {
     calalog.add(niceBook);
     calalog.add(podcats);
     calalog.add(Placeholder);
+    
+    let item = calalog.get_by_index(0);
+    
+    println!("{:#?}", item.unwrap());
 
-    match calalog.get_by_index(100){
-        Some(value) => {
-            println!("item : {:#?}", value)
-        }
-        None =>{
-            println!("no value here")
-        }
-    }
+    //-------------------<>--------------------------------------
+    // match calalog.get_by_index(100){
+    //     Some(value) => {
+    //         println!("item : {:#?}", value)
+    //     }
+    //     None =>{
+    //         println!("no value here")
+    //     }
+    // }
 
     //we can also use pattern matching for this case
     // if let mighHaveaValue::thereIsAvalue(value) = calalog.get_by_index(0){
@@ -128,7 +133,6 @@ fn main() {
     //     println!("there is no value of such!!!!!")
     // }
 
-    //let item = calalog.get_by_index(40);
     // println!("{:#?}", item );
 
     // match calalog.item.get(100){
