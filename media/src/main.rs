@@ -2,8 +2,11 @@
 enum media{
     book{title: String, author: String},
     movie{title: String, director: String},
-    Audiobook{title: String}
+    Audiobook{title: String},
+    podcast(u32),
+    placeholder
 }
+//how would we work with a variant with raw data assigned to it and one with no data assigned
 
 impl media {
     fn description(&self) -> String {
@@ -30,6 +33,12 @@ impl media {
             }
             media::Audiobook { title } =>{
                 format!("Audiobook: {}", title)
+            }
+            media::podcast(ep_num) => {
+                format!("Podcast:{}", ep_num)
+            }
+            media::placeholder =>{
+                format!("placeholder")
             }
         }
     }
@@ -71,11 +80,17 @@ fn main() {
         author: String::from("JK rowling") 
     };
 
+    let podcats = media::podcast((10));
+
+    let Placeholder = media::placeholder;
+
     let mut calalog = Calalog::new();
 
     calalog.add(audiobook);
     calalog.add(goodmovie);
     calalog.add(niceBook);
+    calalog.add(podcats);
+    calalog.add(Placeholder);
 
     println!("{:#?}", calalog);
 
