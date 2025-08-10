@@ -35,6 +35,21 @@ impl media {
     }
 }
 
+#[derive(Debug)]
+struct Calalog{
+    item: Vec<media>
+}
+
+impl Calalog {
+    fn new() -> Self{
+        Calalog{ item: vec![]}
+    }
+
+    fn add(&mut self, media:media){
+        self.item.push(media);
+    }
+}
+
 fn print_media(media:media){
     println!("{:#?}", media)
 }
@@ -56,9 +71,17 @@ fn main() {
         author: String::from("JK rowling") 
     };
 
-    println!("{}",audiobook.description());
-    println!("{}",goodmovie.description());
-    println!("{}",niceBook.description());
+    let mut calalog = Calalog::new();
+
+    calalog.add(audiobook);
+    calalog.add(goodmovie);
+    calalog.add(niceBook);
+
+    println!("{:#?}", calalog);
+
+    // println!("{}",audiobook.description());
+    // println!("{}",goodmovie.description());
+    // println!("{}",niceBook.description());
 
     // print_media(audiobook);
     // print_media(goodmovie);
