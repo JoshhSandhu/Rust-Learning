@@ -1,4 +1,5 @@
 use std::{fs, result};
+use std::io::{read_to_string, Error};
 
 fn extract_errors(text: &str) -> Vec<&str>{
     let split_text = text.split("\n");
@@ -14,7 +15,40 @@ fn extract_errors(text: &str) -> Vec<&str>{
     results
 }
 
-fn main() {
+fn extract_warnings(warnings:&str)-> Vec<&str>{
+    let split_text = warnings.split("\n");
+
+    let mut results = vec![];
+
+    for i in split_text{
+        if i.starts_with("WARNING"){
+            results.push(i);
+        }
+    }
+    results
+}
+
+fn extract_info(information:&str) -> Vec<&str>{
+    let split_text = information.split("\n");
+
+    let mut results = vec![];
+
+    for j in split_text{
+        if j.starts_with("INFO"){
+            results.push(j);
+        }
+    }
+    results
+}
+
+fn main() -> Result<(),Error>{
+    let info_text = fs::read_to_string("logs.txt")?;
+    let info_things = extract_info(info_text.as_str());
+    fs::write("info.txt", info_things.join("\n"))?;
+
+    let wt = fs::read_to_string("logs.txt").expect("failed to read file");
+    let warning_text = extract_warnings(wt.as_str());
+    fs::write("warnings.txt", warning_text.join("\n")).expect("failed to write to text");
 
     match fs::read_to_string("logs.txt") {
         Ok(text_that_was_read) =>{
@@ -23,7 +57,7 @@ fn main() {
             match fs::write("errors.txt", error_logs.join("\n")){
                 Ok(()) => println!("wrote errors.txt"),
                 Err(reason_write_failed) =>{
-                    println!("error in writing file")
+                    println!("error in writing file:{}", reason_write_failed)
                 }
             }
         }
@@ -31,8 +65,8 @@ fn main() {
             println!("failed to read file: {}", why_this_failed);
         }
     }
-
-
+    
+    
     fn the_match_statments_for_the_examples(){
 
         //these were just examples
@@ -52,6 +86,8 @@ fn main() {
         //     }
         // }
     }
+
+    Ok(())
 }
 
 
