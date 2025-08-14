@@ -19,7 +19,13 @@ fn main() {
     match fs::read_to_string("logs.txt") {
         Ok(text_that_was_read) =>{
             let error_logs = extract_errors(text_that_was_read.as_str());
-            println!("{:#?}", error_logs);
+            
+            match fs::write("errors.txt", error_logs.join("\n")){
+                Ok(()) => println!("wrote errors.txt"),
+                Err(reason_write_failed) =>{
+                    println!("error in writing file")
+                }
+            }
         }
         Err(why_this_failed) =>{
             println!("failed to read file: {}", why_this_failed);
