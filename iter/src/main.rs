@@ -40,11 +40,25 @@ fn explode(elements : &[String]) -> Vec<Vec<String>>{
     .collect()
 }
 
+//finds matching color and returns a fallback
+fn find_color_or(elements : &[String], search:&str, fallbacks:&str) -> String {
+    elements
+    .iter()
+    .find(|el| el.contains(search))
+    .map_or(String::from(fallbacks), |el|el.to_string())
+}
+
 fn main() {
     let mut colors = vec![
         String::from("red"),
         String::from("blue"),
         String::from("green")
+    ];
+
+    let mut othercolors= vec![
+        String::from("orange"),
+        String::from("violet"),
+        String::from("yellow")
     ];
 
     let uppercased = to_uppercase(&colors);
@@ -58,4 +72,10 @@ fn main() {
 
     move_elements(colors, &mut moved);
     println!("{:#?}", moved);
+
+    let found_color = find_color_or(
+        &othercolors, 
+        "re", 
+        "no colors");
+        println!("{:#?}",found_color);
 }
