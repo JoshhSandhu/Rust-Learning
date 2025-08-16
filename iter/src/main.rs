@@ -32,6 +32,14 @@ fn move_elements(Vec_A : Vec<String>, vec_B: &mut Vec<String>){
     Vec_A.into_iter().for_each(|el| vec_B.push(el));
 }
 
+//turns a Vec<String> into Vec<Vec<String>>
+fn explode(elements : &[String]) -> Vec<Vec<String>>{
+    elements.iter()
+    .map(|el| el.chars().map(|c| c.to_string()).collect()
+    )
+    .collect()
+}
+
 fn main() {
     let mut colors = vec![
         String::from("red"),
@@ -44,7 +52,8 @@ fn main() {
     shortened_strings(&mut colors[1..3]);
     print_elements(&colors);
     
-    
+    let expoded = explode(&colors);
+    println!("{:#?}", expoded);
     let mut moved = vec![];
 
     move_elements(colors, &mut moved);
