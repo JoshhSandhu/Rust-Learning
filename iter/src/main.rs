@@ -1,4 +1,4 @@
-fn print_elements(elements : Vec<String>){
+fn print_elements(elements : &[String]){ //this is slice of a vector
     // for i in elements{
     //     println!("{}", i)
     // }
@@ -16,5 +16,5 @@ fn main() {
         String::from("red")
     ];
 
-    print_elements(colors);
+    print_elements(&colors[1..3]);
 }
