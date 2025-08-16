@@ -1,3 +1,5 @@
+use std::vec;
+
 
 //prints each element one by one
 fn print_elements(elements : &[String]){ //this is slice of a vector
@@ -21,7 +23,7 @@ fn shortened_strings(short_elements: &mut [String]){
 fn to_uppercase(elements: &[String]) -> Vec<String>{
     elements.iter()
     .map(|el| el.to_uppercase())
-    .collect()
+    .collect::<Vec<_>>() //type inference the compiler figures out the value that goes here
 }
 
 fn main() {
