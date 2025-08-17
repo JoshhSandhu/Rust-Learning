@@ -1,7 +1,8 @@
 use num_traits::{Float, ToPrimitive};
 
-
-fn solve<T: Float>(a: T, b: T) -> f64 {
+//when we have only T that means we have only one generic float type
+//when we add another one U that means we have 2 seperate generic types
+fn solve<T: Float, U:Float>(a: T, b: U) -> f64 {
     
     let a_f64 = a.to_f64().unwrap(); // use this crate to convert numbers
     let b_f64 = b.to_f64().unwrap(); // use this crate to convert numbers
@@ -11,9 +12,9 @@ fn solve<T: Float>(a: T, b: T) -> f64 {
 
 fn main() {
     let a: f32 = 3.45;
-    let b: f32 = 6.54;
+    let b: f64 = 6.54;
 
-    println!("{}", solve::<f32>(a, b));
+    println!("{}", solve(a, b));
 }
 
 
