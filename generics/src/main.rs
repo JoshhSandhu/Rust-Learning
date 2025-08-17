@@ -1,8 +1,10 @@
-use num_traits::{Float, ToPrimitive};
+use num_traits::{ToPrimitive};
 
 //when we have only T that means we have only one generic float type
 //when we add another one U that means we have 2 seperate generic types
-fn solve<T: Float, U:Float>(a: T, b: U) -> f64 {
+
+//when we put toprimative which is a trait it is included with the num-traits crate
+fn solve<T: ToPrimitive, U:ToPrimitive>(a: T, b: U) -> f64 {
     
     let a_f64 = a.to_f64().unwrap(); // use this crate to convert numbers
     let b_f64 = b.to_f64().unwrap(); // use this crate to convert numbers
