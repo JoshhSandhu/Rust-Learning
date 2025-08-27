@@ -1,8 +1,0 @@
-D:\mislanious\vs code\Rust_learning\Rust-Learning\target\debug\deps\block_buffer-d105c11d9cddbcfc.d: C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\lib.rs C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\sealed.rs
-
-D:\mislanious\vs code\Rust_learning\Rust-Learning\target\debug\deps\libblock_buffer-d105c11d9cddbcfc.rlib: C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\lib.rs C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\sealed.rs
-
-D:\mislanious\vs code\Rust_learning\Rust-Learning\target\debug\deps\libblock_buffer-d105c11d9cddbcfc.rmeta: C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\lib.rs C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\sealed.rs
-
-C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\lib.rs:
-C:\Users\joshs\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\sealed.rs:
